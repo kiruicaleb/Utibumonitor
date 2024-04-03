@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement</title>
+</head>
+<body>
+    <h1>Statement</h1>
+    {% if statements %}
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Amount Due</th>
+                <th>Payment Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for statement in statements %}
+            <tr>
+                <td>{{ statement.order.id }}</td>
+                <td>{{ statement.amount_due }}</td>
+                <td>{% if statement.payment_status %}Paid{% else %}Pending{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No statements found.</p>
+    {% endif %}
+</body>
+</html>

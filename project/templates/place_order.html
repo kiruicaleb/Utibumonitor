@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+</head>
+<body>
+    <h1>Place Order</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="medication">Select Medication:</label>
+        <select name="medication" id="medication">
+            {% for medication in medications %}
+            <option value="{{ medication.id }}">{{ medication.name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" min="1" required>
+        <br>
+        <button type="submit">Place Order</button>
+    </form>
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
