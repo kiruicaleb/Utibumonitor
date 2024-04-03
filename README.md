@@ -1,1 +1,1 @@
-# Utibumonitor
+The Utibu application is a health management system designed to streamline various aspects of healthcare services provided by the Utibu Health facility. The primary focus of the application is to cater to patients with chronic conditions such as HIV, diabetes, and hypertension, offering them convenient solutions for medication management and ordering.
